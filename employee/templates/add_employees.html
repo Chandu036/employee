@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Add these links to the head section of your HTML file -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+</head>
+<body>
+    <!-- Your HTML body content -->
+
+    <body class="d-flex align-items-center" style="padding-left: 400px;">
+        <div class="card">
+            <div class="card-body bg-primary ">
+                <form method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <h4>ADD EMPLOYEES</h4>
+                    <div class="form-group">
+                        <label for="{{ form.name.id_for_label }}" class="form-label">NAME</label>
+                        <input type="text" class="form-control" {{ form.name }} > 
+                    </div>
+                    <div class="form-group">
+                        <label for="{{ form.age.id_for_label }}" class="form-label">AGE</label>
+                        <input type="text" class="form-control" {{ form.age }} >
+                    </div>
+                    <div class="form-group">
+                        <label for="{{ form.salary.id_for_label }}" class="form-label">SALARY</label>
+                        <input type="text" class="form-control" {{ form.salary }} >
+                    </div>
+                    <div class="form-group">
+                        <label for="{{ form.bonus.id_for_label }}" class="form-label">BONUS</label>
+                        <input type="text" class="form-control" {{ form.bonus }} >
+                    </div>
+                    <div class="form-group">
+                        <label for="{{ form.department.id_for_label }}" class="form-label">DEPARTMENT</label>
+                        {{ form.department }} 
+                    </div>
+                    <div class="form-group">
+                        <label for="{{ form.image.id_for_label }}" class="form-label">IMAGE</label>
+                        <input type="file" class="form-control" {{ form.image }} >
+                    </div>
+                    <button type="submit" class="btn btn-success">Add Employee</button>
+                </form>
+            </div>
+        </div>
+    </body>
+
+
+</body>
+</html>
